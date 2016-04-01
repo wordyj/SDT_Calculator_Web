@@ -1,17 +1,5 @@
 <html>
     <head>
-        <script language= "javascript">
-            
-            function showtime(){
-                timeform = document.timeform
-                distance = timeform.distance
-                speed = timeform.speed
-                timeinhours = distance / speed
-                document.getElementById("Output").innerHTML = timeinhours;
-                 
-            }
-            
-        </script>
     <body>
         <h1>
             SDT Calculator
@@ -19,15 +7,25 @@
        
         <form name = timeform>
             Distance(Km):<br>
-            <input type="text" name="distance">
+            <input type="number" name="distance">
             <br>
             Speed(Km/H):<br>
-            <input type="text" name="Speed">
+            <input type="number" name="speed">
             <br>
-            <input type="button" onclick="">
-            <textarea name="Output" rows="1"> </textarea>
+            <input type="button" onclick= "showtime()" >
+            <p id="Output"></p>
         </form>
-
+      <script language= "javascript">
+            
+            function showtime(){
+                var distance = document.timeform.distance.value
+                var speed = document.timeform.speed.value
+                var timeinhours = distance / speed
+                document.getElementById("Output").innerHTML = timeinhours;
+                 
+            }
+            
+        </script>
         
     </body>
 </html>
